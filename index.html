@@ -13,43 +13,54 @@
     crossorigin="anonymous"></script>
 </head>
 
-<body>
-  <nav class="navbar bg-light">
-    <div class="container-fluid m-2">
+<body class="container-fluid">
+  <nav class="navbar bg-light ">
+    <div class="container-fluid float-md">
       <a class="navbar-brand"><i class="fa-brands fa-instagram"></i> Instagram</a>
-      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Create a new post
-      </button>
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-gear"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create a new post
+          </button>
+        </div>
+        <div class="col-3 p-0">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accesibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close mr-0" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Caption:</label>
                 <textarea class="form-control" id="message-text"
                   placeholder="Add the caption of your post here"></textarea>
-                <i class="fa-solid fa-camera m-2 bg-light border rounded-1"></i>
-                <!--Aqui me da problema a la hora de dar paddin al icono y es que no se centra al centro, me añade el paddin pero el icono no esta centrado-->
-                <i class="fa-solid fa-location-dot m-2 bg-light border rounded-1"></i>
-                <!--Aqui me da problema a la hora de dar paddin al icono y es que no se centra al centro, me añade el paddin pero el icono no esta centrado-->
+                <div class="row container-fluid mt-3">
+                  <div class="col-1 p-2 me-2 border rounded-1">
+                    <i class=" fa-solid fa-camera bg-light"></i>
+                  </div>
+                  <div class="col-1 p-2 border rounded-1">
+                    <i class="fa-solid fa-location-dot bg-light"></i>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="modal-footer">
@@ -61,39 +72,112 @@
       </div>
     </div>
   </nav>
-  <div class="m-3 d-grid gap-2 d-md-block text-center container-fluid">
-    <button class="btn btn-link" type="button" onclick="document. location='index.html'">
-      <i class="fa-solid fa-table-cells"></i>
-    </button>
-    <button class="btn btn-link" type="button" onclick="document. location='list.html'"> <i
-        class="fa-solid fa-square"></i></button>
-  </div>
-  <div class="container-fluid d-grid gap-3" style="width: 100%;">
-    <div class="row">
-      <div class="col"> <img src="https://images.pexels.com/photos/30374215/pexels-photo-30374215.jpeg"
-          style="width: 100%;"></div>
-      <div class="col"> <img src="https://images.pexels.com/photos/13794406/pexels-photo-13794406.jpeg"
-          style="width: 100%;"></div>
-      <div class="col"> <img src="https://images.pexels.com/photos/30447651/pexels-photo-30447651.jpeg"
-          style="width: 100%;"></div>
+  <ul class="nav nav-tabs d-flex justify-content-center pt-2" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+        aria-controls="home" aria-selected="true"><i class="fa-solid fa-table-cells"></i>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
+        aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i>
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container-fluid d-grid gap-3 pt-2" style="width: 100%;">
+        <div class="row">
+          <div class="col"> <img src="https://images.pexels.com/photos/30374215/pexels-photo-30374215.jpeg"
+              style="width: 100%;"></div>
+          <div class="col"> <img src="https://images.pexels.com/photos/13794406/pexels-photo-13794406.jpeg"
+              style="width: 100%;"></div>
+          <div class="col"> <img src="https://images.pexels.com/photos/30447651/pexels-photo-30447651.jpeg"
+              style="width: 100%;"></div>
+        </div>
+        <div class="row">
+          <div class="col"> <img src="https://images.pexels.com/photos/29816095/pexels-photo-29816095.jpeg"
+              style="width: 100%;"></div>
+          <div class="col"> <img src="https://images.pexels.com/photos/28676205/pexels-photo-28676205.jpeg"
+              style="width: 100%;"></div>
+          <div class="col"> <img src="https://images.pexels.com/photos/3889765/pexels-photo-3889765.jpeg"
+              style="width: 100%;"></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col"> <img src="https://images.pexels.com/photos/5472524/pexels-photo-5472524.jpeg"
+              style="width: 100%;"></div>
+          <div class="col"> <img src="https://images.pexels.com/photos/4502971/pexels-photo-4502971.jpeg"
+              style="width: 100%;"></div>
+          <div class="col"> <img src="https://images.pexels.com/photos/7391720/pexels-photo-7391720.jpeg"
+              style="width: 100%;"></div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col"> <img src="https://images.pexels.com/photos/29816095/pexels-photo-29816095.jpeg"
-          style="width: 100%;"></div>
-      <div class="col"> <img src="https://images.pexels.com/photos/28676205/pexels-photo-28676205.jpeg"
-          style="width: 100%;"></div>
-      <div class="col"> <img src="https://images.pexels.com/photos/3889765/pexels-photo-3889765.jpeg"
-          style="width: 100%;"></div>
-    </div>
-    <div class="row mb-3">
-      <div class="col"> <img src="https://images.pexels.com/photos/5472524/pexels-photo-5472524.jpeg"
-          style="width: 100%;"></div>
-      <div class="col"> <img src="https://images.pexels.com/photos/4502971/pexels-photo-4502971.jpeg"
-          style="width: 100%;"></div>
-      <div class="col"> <img src="https://images.pexels.com/photos/7391720/pexels-photo-7391720.jpeg"
-          style="width: 100%;"></div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container-fluid d-grid gap-3" style="width: 40%;">
+        <div class="m-3 d-grid gap-2 d-md-block text-center container-fluid">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              ...
+            </div>
+          </div>
+        </div>
+        <div class="card grid-tab">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-9">
+                <h5>My crazy dog spark</h5>
+              </div>
+              <div class="col text-end">
+                08/26
+              </div>
+            </div>
+          </div>
+          <img src="https://images.pexels.com/photos/28259726/pexels-photo-28259726.jpeg" style="width: 100%;"
+            class="card-img-top">
+          <div class="card-body">
+            <p class="card-text mb-0"><strong>204 likes</strong></p>
+            <p class="card-text">This is an exmaple of very good photo that you can post on instagram</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-9">
+                <h5>The greatness of Croatia</h5>
+              </div>
+              <div class="col text-end">
+                04/26
+              </div>
+            </div>
+          </div>
+          <img src="https://images.pexels.com/photos/2345863/pexels-photo-2345863.jpeg" style="width: 100%;"
+            class="card-img-top">
+          <div class="card-body">
+            <p class="card-tex mb-0"><strong>26985 likes</strong></p>
+            <p class="card-text">This is an exmaple of very good photo that you can post on instagram</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-9">
+                <h5>Amazing GOAL by Cristiano!</h5>
+              </div>
+              <div class="col text-end">
+                06/10
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://assets.goal.com/images/v3/blt196a88a65547c7b5/4aff02ef127454a6a693508299af4f398b878a1f.jpg?auto=webp&format=pjpg&width=3840&quality=60"
+            style="width: 100%;" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text mb-0"><strong>204 likes</strong></p>
+            <p class="card-text">This is an exmaple of very good photo that you can post on instagram</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
-
-</html>
